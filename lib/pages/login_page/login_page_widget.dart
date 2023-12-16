@@ -1,7 +1,9 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'login_page_model.dart';
@@ -70,7 +72,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+        backgroundColor: FlutterFlowTheme.of(context).info,
         body: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.max,
@@ -362,6 +364,55 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                                   validator: _model
                                                       .passwordLoginControllerValidator
                                                       .asValidator(context),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 10.0, 0.0, 0.0),
+                                                child:
+                                                    FlutterFlowDropDown<String>(
+                                                  controller: _model
+                                                          .dropDownValueController ??=
+                                                      FormFieldController<
+                                                          String>(null),
+                                                  options: const ['User', 'Admin'],
+                                                  onChanged: (val) => setState(
+                                                      () => _model
+                                                          .dropDownValue = val),
+                                                  width: 323.0,
+                                                  height: 50.0,
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium,
+                                                  hintText: 'Please select...',
+                                                  icon: Icon(
+                                                    Icons
+                                                        .keyboard_arrow_down_rounded,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryText,
+                                                    size: 24.0,
+                                                  ),
+                                                  fillColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .info,
+                                                  elevation: 2.0,
+                                                  borderColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .alternate,
+                                                  borderWidth: 2.0,
+                                                  borderRadius: 0.0,
+                                                  margin: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          16.0, 4.0, 16.0, 4.0),
+                                                  hidesUnderline: true,
+                                                  isOverButton: true,
+                                                  isSearchable: false,
+                                                  isMultiSelect: false,
                                                 ),
                                               ),
                                               Padding(

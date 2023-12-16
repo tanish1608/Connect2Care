@@ -165,6 +165,55 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             appointmentDetails: params.getParam('appointmentDetails',
                 ParamType.DocumentReference, false, ['appointments']),
           ),
+        ),
+        FFRoute(
+          name: 'homePageAdmin',
+          path: '/homePageAdmin',
+          asyncParams: {
+            'test': getDoc(['asdfasdf'], AsdfasdfRecord.fromSnapshot),
+          },
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'homePageAdmin')
+              : HomePageAdminWidget(
+                  test: params.getParam('test', ParamType.Document),
+                ),
+        ),
+        FFRoute(
+          name: 'myAppointmentsCopy',
+          path: '/myAppointmentsCopy',
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'myAppointmentsCopy')
+              : const MyAppointmentsCopyWidget(),
+        ),
+        FFRoute(
+          name: 'AdminHomePage',
+          path: '/adminHomePage',
+          builder: (context, params) => const AdminHomePageWidget(),
+        ),
+        FFRoute(
+          name: 'Patientdetails',
+          path: '/patientdetails',
+          builder: (context, params) => const PatientdetailsWidget(),
+        ),
+        FFRoute(
+          name: 'Doctors',
+          path: '/doctors',
+          builder: (context, params) => const DoctorsWidget(),
+        ),
+        FFRoute(
+          name: 'Staff',
+          path: '/staff',
+          builder: (context, params) => const StaffWidget(),
+        ),
+        FFRoute(
+          name: 'Inventory',
+          path: '/inventory',
+          builder: (context, params) => const InventoryWidget(),
+        ),
+        FFRoute(
+          name: 'BloodGroup',
+          path: '/bloodGroup',
+          builder: (context, params) => const BloodGroupWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

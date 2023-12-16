@@ -3,23 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>834963620340-plvujkgh8prnacq4mb9ithhood7bsjts.apps.googleusercontent.com</string>
+	<string>76858327014-nvflbn815hdns13f0p89qdf3s60ae6na.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.834963620340-plvujkgh8prnacq4mb9ithhood7bsjts</string>
-	<key>ANDROID_CLIENT_ID</key>
-	<string>834963620340-bue9sd2lhbvpce6emm14iarigdb2e2k7.apps.googleusercontent.com</string>
+	<string>com.googleusercontent.apps.76858327014-nvflbn815hdns13f0p89qdf3s60ae6na</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCK-kJ2QnIx4hYtufvmvL7Tvvkh0WuCsCc</string>
+	<string>AIzaSyAVYLBoGfoRVycLA0qUVaX987sxrBXqtI4</string>
 	<key>GCM_SENDER_ID</key>
-	<string>834963620340</string>
+	<string>76858327014</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.flutterflow.healthai</string>
 	<key>PROJECT_ID</key>
-	<string>health-ai-66455</string>
+	<string>connect2-caree-2ny4tw</string>
 	<key>STORAGE_BUCKET</key>
-	<string>health-ai-66455.appspot.com</string>
+	<string>connect2-caree-2ny4tw.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -31,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:834963620340:ios:1f293dd2ec9d86b584f9a1</string>
+	<string>1:76858327014:ios:a631ef438f2f06ee496027</string>
 </dict>
 </plist>

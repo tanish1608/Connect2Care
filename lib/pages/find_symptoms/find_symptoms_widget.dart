@@ -53,7 +53,7 @@ class _FindSymptomsWidgetState extends State<FindSymptomsWidget> {
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         automaticallyImplyLeading: false,
         title: Text(
-          'Symptoms',
+          'Insurance',
           style: FlutterFlowTheme.of(context).displaySmall,
         ),
         actions: [
@@ -88,14 +88,14 @@ class _FindSymptomsWidgetState extends State<FindSymptomsWidget> {
                         focusNode: _model.searchFieldFocusNode,
                         obscureText: false,
                         decoration: InputDecoration(
-                          labelText: 'Search symptoms…',
+                          labelText: 'Search ',
                           labelStyle: FlutterFlowTheme.of(context)
                               .bodyMedium
                               .override(
                                 fontFamily: 'Manrope',
                                 color: FlutterFlowTheme.of(context).grayLight,
                               ),
-                          hintText: 'Headache, heartburn etc...',
+                          hintText: 'Compare plans',
                           hintStyle: FlutterFlowTheme.of(context)
                               .bodyMedium
                               .override(
@@ -185,11 +185,218 @@ class _FindSymptomsWidgetState extends State<FindSymptomsWidget> {
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(2.0),
+                                  child: Image.network(
+                                    'https://picsum.photos/seed/116/600',
+                                    width: 30.0,
+                                    height: 30.0,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
                                 Expanded(
-                                  child: Text(
-                                    '[Symptom Name]',
-                                    style: FlutterFlowTheme.of(context)
-                                        .headlineSmall,
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        9.0, 0.0, 0.0, 0.0),
+                                    child: Text(
+                                      'Care Health',
+                                      style: FlutterFlowTheme.of(context)
+                                          .headlineSmall,
+                                    ),
+                                  ),
+                                ),
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                  child: Image.network(
+                                    'https://images.unsplash.com/photo-1682685797140-c17807f8f217?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MXwxfHNlYXJjaHwxfHxzdW5zZXR8ZW58MHx8fHwxNzAyNjczMzc4fDA&ixlib=rb-4.0.3&q=80&w=1080',
+                                    width: 30.0,
+                                    height: 30.0,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                                Icon(
+                                  Icons.chevron_right_rounded,
+                                  color: FlutterFlowTheme.of(context).grayLight,
+                                  size: 24.0,
+                                ),
+                              ],
+                            ),
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 8.0, 0.0, 0.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Expanded(
+                                    child: AutoSizeText(
+                                      'Convulsive disorder that does something and extra content goes here because that is where it goes okay, don’t question.',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodySmall,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                    child: Container(
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                        boxShadow: const [
+                          BoxShadow(
+                            blurRadius: 5.0,
+                            color: Color(0x2E000000),
+                            offset: Offset(0.0, 2.0),
+                          )
+                        ],
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      child: Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(1.0, 1.0, 1.0, 0.0),
+                        child: Container(
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            boxShadow: const [
+                              BoxShadow(
+                                blurRadius: 5.0,
+                                color: Color(0x2E000000),
+                                offset: Offset(0.0, 2.0),
+                              )
+                            ],
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(12.0),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    ClipRRect(
+                                      borderRadius: BorderRadius.circular(2.0),
+                                      child: Image.network(
+                                        'https://picsum.photos/seed/116/600',
+                                        width: 30.0,
+                                        height: 30.0,
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                    Expanded(
+                                      child: Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            9.0, 0.0, 0.0, 0.0),
+                                        child: Text(
+                                          'Niva Bupa',
+                                          style: FlutterFlowTheme.of(context)
+                                              .headlineSmall,
+                                        ),
+                                      ),
+                                    ),
+                                    ClipRRect(
+                                      borderRadius: BorderRadius.circular(8.0),
+                                      child: Image.network(
+                                        'https://picsum.photos/seed/493/600',
+                                        width: 30.0,
+                                        height: 30.0,
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                    Icon(
+                                      Icons.chevron_right_rounded,
+                                      color: FlutterFlowTheme.of(context)
+                                          .grayLight,
+                                      size: 24.0,
+                                    ),
+                                  ],
+                                ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 8.0, 0.0, 0.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Expanded(
+                                        child: AutoSizeText(
+                                          'Convulsive disorder that does something and extra content goes here because that is where it goes okay, don’t question.',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodySmall,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                    child: Container(
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                        boxShadow: const [
+                          BoxShadow(
+                            blurRadius: 5.0,
+                            color: Color(0x2E000000),
+                            offset: Offset(0.0, 2.0),
+                          )
+                        ],
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(2.0),
+                                  child: Image.network(
+                                    'https://picsum.photos/seed/116/600',
+                                    width: 30.0,
+                                    height: 30.0,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        9.0, 0.0, 0.0, 0.0),
+                                    child: Text(
+                                      'HDFC ERGO',
+                                      style: FlutterFlowTheme.of(context)
+                                          .headlineSmall,
+                                    ),
+                                  ),
+                                ),
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                  child: Image.network(
+                                    'https://picsum.photos/seed/493/600',
+                                    width: 30.0,
+                                    height: 30.0,
+                                    fit: BoxFit.cover,
                                   ),
                                 ),
                                 Icon(
@@ -245,131 +452,33 @@ class _FindSymptomsWidgetState extends State<FindSymptomsWidget> {
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Expanded(
-                                  child: Text(
-                                    '[Symptom Name]',
-                                    style: FlutterFlowTheme.of(context)
-                                        .headlineSmall,
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(2.0),
+                                  child: Image.network(
+                                    'https://picsum.photos/seed/116/600',
+                                    width: 30.0,
+                                    height: 30.0,
+                                    fit: BoxFit.cover,
                                   ),
                                 ),
-                                Icon(
-                                  Icons.chevron_right_rounded,
-                                  color: FlutterFlowTheme.of(context).grayLight,
-                                  size: 24.0,
-                                ),
-                              ],
-                            ),
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 8.0, 0.0, 0.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Expanded(
-                                    child: AutoSizeText(
-                                      'Convulsive disorder that does something and extra content goes here because that is where it goes okay, don’t question.',
+                                Expanded(
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        9.0, 0.0, 0.0, 0.0),
+                                    child: Text(
+                                      'Star Health',
                                       style: FlutterFlowTheme.of(context)
-                                          .bodySmall,
+                                          .headlineSmall,
                                     ),
                                   ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
-                    child: Container(
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
-                        boxShadow: const [
-                          BoxShadow(
-                            blurRadius: 5.0,
-                            color: Color(0x2E000000),
-                            offset: Offset(0.0, 2.0),
-                          )
-                        ],
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(12.0),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Expanded(
-                                  child: Text(
-                                    '[Symptom Name]',
-                                    style: FlutterFlowTheme.of(context)
-                                        .headlineSmall,
-                                  ),
                                 ),
-                                Icon(
-                                  Icons.chevron_right_rounded,
-                                  color: FlutterFlowTheme.of(context).grayLight,
-                                  size: 24.0,
-                                ),
-                              ],
-                            ),
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 8.0, 0.0, 0.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Expanded(
-                                    child: AutoSizeText(
-                                      'Convulsive disorder that does something and extra content goes here because that is where it goes okay, don’t question.',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodySmall,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
-                    child: Container(
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
-                        boxShadow: const [
-                          BoxShadow(
-                            blurRadius: 5.0,
-                            color: Color(0x2E000000),
-                            offset: Offset(0.0, 2.0),
-                          )
-                        ],
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(12.0),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Expanded(
-                                  child: Text(
-                                    '[Symptom Name]',
-                                    style: FlutterFlowTheme.of(context)
-                                        .headlineSmall,
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                  child: Image.network(
+                                    'https://picsum.photos/seed/493/600',
+                                    width: 30.0,
+                                    height: 30.0,
+                                    fit: BoxFit.cover,
                                   ),
                                 ),
                                 Icon(

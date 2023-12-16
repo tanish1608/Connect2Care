@@ -5,13 +5,12 @@ Future initFirebase() async {
   if (kIsWeb) {
     await Firebase.initializeApp(
         options: const FirebaseOptions(
-            apiKey: "AIzaSyDVe2Yw92QnfqGYfMAzxvr0Pv42cKNQG68",
-            authDomain: "health-ai-66455.firebaseapp.com",
-            projectId: "health-ai-66455",
-            storageBucket: "health-ai-66455.appspot.com",
-            messagingSenderId: "834963620340",
-            appId: "1:834963620340:web:e8d57d9f6cf7667a84f9a1",
-            measurementId: "G-DEC0FESPZD"));
+            apiKey: "AIzaSyA-7_SJe4wtl0MPzWAIWRMfhCFyKffqAD4",
+            authDomain: "connect2-caree-2ny4tw.firebaseapp.com",
+            projectId: "connect2-caree-2ny4tw",
+            storageBucket: "connect2-caree-2ny4tw.appspot.com",
+            messagingSenderId: "76858327014",
+            appId: "1:76858327014:web:e63fd8fe4c843258496027"));
   } else {
     await Firebase.initializeApp();
   }
