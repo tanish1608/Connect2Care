@@ -167,25 +167,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'homePageAdmin',
-          path: '/homePageAdmin',
-          asyncParams: {
-            'test': getDoc(['asdfasdf'], AsdfasdfRecord.fromSnapshot),
-          },
-          builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'homePageAdmin')
-              : HomePageAdminWidget(
-                  test: params.getParam('test', ParamType.Document),
-                ),
-        ),
-        FFRoute(
-          name: 'myAppointmentsCopy',
-          path: '/myAppointmentsCopy',
-          builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'myAppointmentsCopy')
-              : const MyAppointmentsCopyWidget(),
-        ),
-        FFRoute(
           name: 'AdminHomePage',
           path: '/adminHomePage',
           builder: (context, params) => const AdminHomePageWidget(),
@@ -193,7 +174,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'Patientdetails',
           path: '/patientdetails',
-          builder: (context, params) => const PatientdetailsWidget(),
+          builder: (context, params) => PatientdetailsWidget(
+            gh: params.getParam(
+                'gh', ParamType.DocumentReference, false, ['Patients']),
+          ),
         ),
         FFRoute(
           name: 'Doctors',

@@ -17,10 +17,6 @@ export '/pages/edit_profile/edit_profile_widget.dart' show EditProfileWidget;
 export '/pages/find_symptoms/find_symptoms_widget.dart' show FindSymptomsWidget;
 export '/pages/appointment_details_profile/appointment_details_profile_widget.dart'
     show AppointmentDetailsProfileWidget;
-export '/pages/home_page_admin/home_page_admin_widget.dart'
-    show HomePageAdminWidget;
-export '/pages/my_appointments_copy/my_appointments_copy_widget.dart'
-    show MyAppointmentsCopyWidget;
 export '/admin_home_page/admin_home_page_widget.dart' show AdminHomePageWidget;
 export '/patientdetails/patientdetails_widget.dart' show PatientdetailsWidget;
 export '/doctors/doctors_widget.dart' show DoctorsWidget;

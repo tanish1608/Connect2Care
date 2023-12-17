@@ -130,8 +130,6 @@ class _NavBarPageState extends State<NavBarPage> {
       'myAppointments': const MyAppointmentsWidget(),
       'findSymptoms': const FindSymptomsWidget(),
       'profilePage': const ProfilePageWidget(),
-      'homePageAdmin': const HomePageAdminWidget(),
-      'myAppointmentsCopy': const MyAppointmentsCopyWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -193,30 +191,6 @@ class _NavBarPageState extends State<NavBarPage> {
             ),
             activeIcon: Icon(
               Icons.account_circle_rounded,
-              size: 24.0,
-            ),
-            label: '•',
-            tooltip: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home_outlined,
-              size: 24.0,
-            ),
-            activeIcon: Icon(
-              Icons.home_rounded,
-              size: 24.0,
-            ),
-            label: '•',
-            tooltip: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.date_range_outlined,
-              size: 24.0,
-            ),
-            activeIcon: Icon(
-              Icons.date_range_rounded,
               size: 24.0,
             ),
             label: '•',
