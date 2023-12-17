@@ -54,16 +54,16 @@ class _FindSymptomsWidgetState extends State<FindSymptomsWidget> {
         automaticallyImplyLeading: false,
         title: Text(
           'Insurance',
-          style: FlutterFlowTheme.of(context).displaySmall,
+          style: FlutterFlowTheme.of(context).displaySmall.override(
+                fontFamily: 'Urbanist',
+                fontSize: 30.0,
+              ),
         ),
         actions: [
-          Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
-            child: wrapWithModel(
-              model: _model.mainLogoModel,
-              updateCallback: () => setState(() {}),
-              child: const MainLogoWidget(),
-            ),
+          wrapWithModel(
+            model: _model.mainLogoModel,
+            updateCallback: () => setState(() {}),
+            child: const MainLogoWidget(),
           ),
         ],
         centerTitle: false,
