@@ -187,11 +187,11 @@ class _FindSymptomsWidgetState extends State<FindSymptomsWidget> {
                               children: [
                                 ClipRRect(
                                   borderRadius: BorderRadius.circular(2.0),
-                                  child: Image.network(
-                                    'https://picsum.photos/seed/116/600',
-                                    width: 30.0,
-                                    height: 30.0,
-                                    fit: BoxFit.cover,
+                                  child: Image.asset(
+                                    'assets/images/PHOTO-2023-12-16-19-18-31.jpg',
+                                    width: 51.0,
+                                    height: 34.0,
+                                    fit: BoxFit.fitWidth,
                                   ),
                                 ),
                                 Expanded(
@@ -207,11 +207,11 @@ class _FindSymptomsWidgetState extends State<FindSymptomsWidget> {
                                 ),
                                 ClipRRect(
                                   borderRadius: BorderRadius.circular(8.0),
-                                  child: Image.network(
-                                    'https://images.unsplash.com/photo-1682685797140-c17807f8f217?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MXwxfHNlYXJjaHwxfHxzdW5zZXR8ZW58MHx8fHwxNzAyNjczMzc4fDA&ixlib=rb-4.0.3&q=80&w=1080',
-                                    width: 30.0,
-                                    height: 30.0,
-                                    fit: BoxFit.cover,
+                                  child: Image.asset(
+                                    'assets/images/IMG-20231216-WA0024-removebg-preview.png',
+                                    width: 81.0,
+                                    height: 51.0,
+                                    fit: BoxFit.fitWidth,
                                   ),
                                 ),
                                 Icon(
@@ -287,10 +287,10 @@ class _FindSymptomsWidgetState extends State<FindSymptomsWidget> {
                                   children: [
                                     ClipRRect(
                                       borderRadius: BorderRadius.circular(2.0),
-                                      child: Image.network(
-                                        'https://picsum.photos/seed/116/600',
-                                        width: 30.0,
-                                        height: 30.0,
+                                      child: Image.asset(
+                                        'assets/images/Niva_Bupa_Logo-removebg-preview.png',
+                                        width: 63.0,
+                                        height: 34.0,
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -307,10 +307,10 @@ class _FindSymptomsWidgetState extends State<FindSymptomsWidget> {
                                     ),
                                     ClipRRect(
                                       borderRadius: BorderRadius.circular(8.0),
-                                      child: Image.network(
-                                        'https://picsum.photos/seed/493/600',
-                                        width: 30.0,
-                                        height: 30.0,
+                                      child: Image.asset(
+                                        'assets/images/IMG-20231216-WA0025-removebg-preview.png',
+                                        width: 81.0,
+                                        height: 51.0,
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -372,10 +372,10 @@ class _FindSymptomsWidgetState extends State<FindSymptomsWidget> {
                               children: [
                                 ClipRRect(
                                   borderRadius: BorderRadius.circular(2.0),
-                                  child: Image.network(
-                                    'https://picsum.photos/seed/116/600',
-                                    width: 30.0,
-                                    height: 30.0,
+                                  child: Image.asset(
+                                    'assets/images/IMG-20231216-WA0033-removebg-preview.png',
+                                    width: 64.0,
+                                    height: 51.0,
                                     fit: BoxFit.cover,
                                   ),
                                 ),
@@ -392,10 +392,10 @@ class _FindSymptomsWidgetState extends State<FindSymptomsWidget> {
                                 ),
                                 ClipRRect(
                                   borderRadius: BorderRadius.circular(8.0),
-                                  child: Image.network(
-                                    'https://picsum.photos/seed/493/600',
-                                    width: 30.0,
-                                    height: 30.0,
+                                  child: Image.asset(
+                                    'assets/images/IMG-20231216-WA0025-removebg-preview.png',
+                                    width: 81.0,
+                                    height: 51.0,
                                     fit: BoxFit.cover,
                                   ),
                                 ),
@@ -454,11 +454,11 @@ class _FindSymptomsWidgetState extends State<FindSymptomsWidget> {
                               children: [
                                 ClipRRect(
                                   borderRadius: BorderRadius.circular(2.0),
-                                  child: Image.network(
-                                    'https://picsum.photos/seed/116/600',
-                                    width: 30.0,
-                                    height: 30.0,
-                                    fit: BoxFit.cover,
+                                  child: Image.asset(
+                                    'assets/images/star-health.png',
+                                    width: 64.0,
+                                    height: 49.0,
+                                    fit: BoxFit.fitWidth,
                                   ),
                                 ),
                                 Expanded(
@@ -474,10 +474,10 @@ class _FindSymptomsWidgetState extends State<FindSymptomsWidget> {
                                 ),
                                 ClipRRect(
                                   borderRadius: BorderRadius.circular(8.0),
-                                  child: Image.network(
-                                    'https://picsum.photos/seed/493/600',
-                                    width: 30.0,
-                                    height: 30.0,
+                                  child: Image.asset(
+                                    'assets/images/IMG-20231216-WA0026-removebg-preview_2.png',
+                                    width: 81.0,
+                                    height: 51.0,
                                     fit: BoxFit.cover,
                                   ),
                                 ),

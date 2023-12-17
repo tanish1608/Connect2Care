@@ -119,9 +119,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                 if (!(Theme.of(context).brightness ==
                                     Brightness.dark))
                                   Image.asset(
-                                    'assets/images/logo_darkFull@2x.png',
+                                    'assets/images/IMG-20231217-WA0004-removebg.png',
                                     width: 200.0,
-                                    height: 130.0,
+                                    height: 164.0,
                                     fit: BoxFit.fitHeight,
                                   ),
                               ],

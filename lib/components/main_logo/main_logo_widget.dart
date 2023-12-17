@@ -38,11 +38,11 @@ class _MainLogoWidgetState extends State<MainLogoWidget> {
       children: [
         if (!(Theme.of(context).brightness == Brightness.dark))
           Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
             child: Image.asset(
-              'assets/images/health-ai_logoHorz_dark@3x.png',
-              width: 120.0,
-              height: 40.0,
+              'assets/images/Untitled_design-removebg-preview.png',
+              width: 220.0,
+              height: 70.0,
               fit: BoxFit.fitWidth,
             ),
           ),

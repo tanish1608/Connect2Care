@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/components/book_appointment/book_appointment_widget.dart';
 import '/components/main_logo/main_logo_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -83,7 +84,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 16.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(20.0, 8.0, 16.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -118,7 +119,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('Doctors');
+                            context.pushNamed('AdminHomePage');
                           },
                           child: wrapWithModel(
                             model: _model.mainLogoModel,
@@ -137,7 +138,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       children: [
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 16.0, 0.0, 0.0),
+                              0.0, 1.0, 0.0, 0.0),
                           child: Text(
                             'Hello',
                             style: FlutterFlowTheme.of(context).displaySmall,
@@ -504,133 +505,266 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Align(
-                                    alignment: const AlignmentDirectional(-1.0, 0.0),
-                                    child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 20.0, 0.0),
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    3.0, 10.0, 0.0, 0.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Align(
+                                      alignment:
+                                          const AlignmentDirectional(-1.0, 0.0),
+                                      child: Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 20.0, 0.0),
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            await showModalBottomSheet(
+                                              isScrollControlled: true,
+                                              backgroundColor:
+                                                  Colors.transparent,
+                                              context: context,
+                                              builder: (context) {
+                                                return Padding(
+                                                  padding:
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
+                                                  child: const SizedBox(
+                                                    height: 100.0,
+                                                    child:
+                                                        BookAppointmentWidget(),
+                                                  ),
+                                                );
+                                              },
+                                            ).then(
+                                                (value) => safeSetState(() {}));
+                                          },
+                                          child: Container(
+                                            width: 150.0,
+                                            height: 150.0,
+                                            decoration: const BoxDecoration(
+                                              color: Color(0xFFFFC876),
+                                              borderRadius: BorderRadius.only(
+                                                bottomLeft:
+                                                    Radius.circular(20.0),
+                                                bottomRight:
+                                                    Radius.circular(20.0),
+                                                topLeft: Radius.circular(20.0),
+                                                topRight: Radius.circular(20.0),
+                                              ),
+                                              shape: BoxShape.rectangle,
+                                            ),
+                                            alignment:
+                                                const AlignmentDirectional(-1.0, 0.0),
+                                            child: Padding(
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      10.0, 0.0, 0.0, 0.0),
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  await showModalBottomSheet(
+                                                    isScrollControlled: true,
+                                                    backgroundColor:
+                                                        Colors.transparent,
+                                                    context: context,
+                                                    builder: (context) {
+                                                      return Padding(
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
+                                                        child: const SizedBox(
+                                                          height: 100.0,
+                                                          child:
+                                                              BookAppointmentWidget(),
+                                                        ),
+                                                      );
+                                                    },
+                                                  ).then((value) =>
+                                                      safeSetState(() {}));
+                                                },
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    const Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: [
+                                                        Align(
+                                                          alignment:
+                                                              AlignmentDirectional(
+                                                                  1.0, -1.0),
+                                                          child: Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        70.0,
+                                                                        10.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            child: FaIcon(
+                                                              FontAwesomeIcons
+                                                                  .heartbeat,
+                                                              color: Color(
+                                                                  0x8BEFA333),
+                                                              size: 47.0,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    Align(
+                                                      alignment:
+                                                          const AlignmentDirectional(
+                                                              -1.0, 1.0),
+                                                      child: Padding(
+                                                        padding:
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    9.0,
+                                                                    17.0,
+                                                                    0.0,
+                                                                    0.0),
+                                                        child: Text(
+                                                          'Consultation',
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .displaySmall
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Urbanist',
+                                                                fontSize: 20.0,
+                                                              ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Align(
+                                                      alignment:
+                                                          const AlignmentDirectional(
+                                                              -1.0, 1.0),
+                                                      child: Padding(
+                                                        padding:
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    10.0,
+                                                                    5.0,
+                                                                    0.0,
+                                                                    0.0),
+                                                        child: Text(
+                                                          '50+ Doctors\navailable',
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .displaySmall
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Urbanist',
+                                                                fontSize: 13.0,
+                                                              ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Align(
+                                      alignment: const AlignmentDirectional(1.0, 0.0),
                                       child: Container(
-                                        width: 145.0,
-                                        height: 145.0,
+                                        width: 150.0,
+                                        height: 150.0,
                                         decoration: const BoxDecoration(
-                                          color: Color(0xFFFFC876),
+                                          color: Color(0xFFA39EE4),
                                           borderRadius: BorderRadius.only(
                                             bottomLeft: Radius.circular(20.0),
                                             bottomRight: Radius.circular(20.0),
                                             topLeft: Radius.circular(20.0),
                                             topRight: Radius.circular(20.0),
                                           ),
-                                          shape: BoxShape.rectangle,
                                         ),
-                                        alignment:
-                                            const AlignmentDirectional(-1.0, 0.0),
-                                        child: Column(
+                                        child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
-                                            const Row(
+                                            Column(
                                               mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
                                               children: [
-                                                Align(
-                                                  alignment:
-                                                      AlignmentDirectional(
-                                                          -1.0, -1.0),
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                20.0,
-                                                                10.0,
-                                                                30.0,
-                                                                10.0),
-                                                    child: Icon(
-                                                      Icons.wechat_sharp,
-                                                      color: Color(0xFFF8F7F7),
-                                                      size: 40.0,
-                                                    ),
+                                                Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          70.0, 10.0, 0.0, 0.0),
+                                                  child: Icon(
+                                                    Icons.computer,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .tertiary,
+                                                    size: 50.0,
                                                   ),
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
-                                                          1.0, -1.0),
+                                                      const AlignmentDirectional(
+                                                          0.0, 0.0),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 10.0,
-                                                                20.0, 0.0),
-                                                    child: FaIcon(
-                                                      FontAwesomeIcons
-                                                          .heartbeat,
-                                                      color: Color(0x8BEFA333),
-                                                      size: 44.0,
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(15.0,
+                                                                17.0, 0.0, 0.0),
+                                                    child: Text(
+                                                      'Chat',
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .displayMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Urbanist',
+                                                                fontSize: 22.0,
+                                                              ),
                                                     ),
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          15.0, 0.0, 0.0, 0.0),
+                                                  child: Text(
+                                                    'Get help \nwith health  queries',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .displaySmall
+                                                        .override(
+                                                          fontFamily:
+                                                              'Urbanist',
+                                                          fontSize: 13.0,
+                                                        ),
                                                   ),
                                                 ),
                                               ],
-                                            ),
-                                            Align(
-                                              alignment: const AlignmentDirectional(
-                                                  -1.0, 1.0),
-                                              child: Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        9.0, 10.0, 0.0, 0.0),
-                                                child: Text(
-                                                  'Consultation',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .displaySmall
-                                                      .override(
-                                                        fontFamily: 'Urbanist',
-                                                        fontSize: 20.0,
-                                                      ),
-                                                ),
-                                              ),
-                                            ),
-                                            Align(
-                                              alignment: const AlignmentDirectional(
-                                                  -1.0, 1.0),
-                                              child: Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        10.0, 5.0, 0.0, 0.0),
-                                                child: Text(
-                                                  '50+ Doctors available',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .displaySmall
-                                                      .override(
-                                                        fontFamily: 'Urbanist',
-                                                        fontSize: 13.0,
-                                                      ),
-                                                ),
-                                              ),
                                             ),
                                           ],
                                         ),
                                       ),
                                     ),
-                                  ),
-                                  Align(
-                                    alignment: const AlignmentDirectional(1.0, 0.0),
-                                    child: Container(
-                                      width: 145.0,
-                                      height: 145.0,
-                                      decoration: const BoxDecoration(
-                                        color: Color(0xFFA39EE4),
-                                        borderRadius: BorderRadius.only(
-                                          bottomLeft: Radius.circular(20.0),
-                                          bottomRight: Radius.circular(20.0),
-                                          topLeft: Radius.circular(20.0),
-                                          topRight: Radius.circular(20.0),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(

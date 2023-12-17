@@ -1004,6 +1004,7 @@ class _AdminHomePageWidgetState extends State<AdminHomePageWidget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
+                                                  fontSize: 21.0,
                                                 ),
                                           ),
                                           Padding(
