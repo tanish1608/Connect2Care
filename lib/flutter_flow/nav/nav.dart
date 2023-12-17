@@ -198,6 +198,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'BloodGroup',
           path: '/bloodGroup',
           builder: (context, params) => const BloodGroupWidget(),
+        ),
+        FFRoute(
+          name: 'Chatbott',
+          path: '/chatbott',
+          builder: (context, params) => const ChatbottWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

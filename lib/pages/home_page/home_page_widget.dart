@@ -696,70 +696,85 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             topRight: Radius.circular(20.0),
                                           ),
                                         ),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          70.0, 10.0, 0.0, 0.0),
-                                                  child: Icon(
-                                                    Icons.computer,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .tertiary,
-                                                    size: 50.0,
-                                                  ),
-                                                ),
-                                                Align(
-                                                  alignment:
-                                                      const AlignmentDirectional(
-                                                          0.0, 0.0),
-                                                  child: Padding(
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            context.pushNamed('Chatbott');
+                                          },
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.start,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Padding(
                                                     padding:
                                                         const EdgeInsetsDirectional
-                                                            .fromSTEB(15.0,
-                                                                17.0, 0.0, 0.0),
+                                                            .fromSTEB(70.0,
+                                                                10.0, 0.0, 0.0),
+                                                    child: Icon(
+                                                      Icons.computer,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .tertiary,
+                                                      size: 50.0,
+                                                    ),
+                                                  ),
+                                                  Align(
+                                                    alignment:
+                                                        const AlignmentDirectional(
+                                                            0.0, 0.0),
+                                                    child: Padding(
+                                                      padding:
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  15.0,
+                                                                  17.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      child: Text(
+                                                        'Chat',
+                                                        style: FlutterFlowTheme
+                                                                .of(context)
+                                                            .displayMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  'Urbanist',
+                                                              fontSize: 22.0,
+                                                            ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(15.0, 0.0,
+                                                                0.0, 0.0),
                                                     child: Text(
-                                                      'Chat',
+                                                      'Get help \nwith health  queries',
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .displayMedium
+                                                              .displaySmall
                                                               .override(
                                                                 fontFamily:
                                                                     'Urbanist',
-                                                                fontSize: 22.0,
+                                                                fontSize: 13.0,
                                                               ),
                                                     ),
                                                   ),
-                                                ),
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          15.0, 0.0, 0.0, 0.0),
-                                                  child: Text(
-                                                    'Get help \nwith health  queries',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .displaySmall
-                                                        .override(
-                                                          fontFamily:
-                                                              'Urbanist',
-                                                          fontSize: 13.0,
-                                                        ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ],
+                                                ],
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     ),

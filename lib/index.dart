@@ -23,3 +23,4 @@ export '/doctors/doctors_widget.dart' show DoctorsWidget;
 export '/staff/staff_widget.dart' show StaffWidget;
 export '/inventory/inventory_widget.dart' show InventoryWidget;
 export '/blood_group/blood_group_widget.dart' show BloodGroupWidget;
+export '/chatbott/chatbott_widget.dart' show ChatbottWidget;
