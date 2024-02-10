@@ -16,7 +16,7 @@ class AppointmentDetailsProfileWidget extends StatefulWidget {
   final DocumentReference? appointmentDetails;
 
   @override
-  _AppointmentDetailsProfileWidgetState createState() =>
+  State<AppointmentDetailsProfileWidget> createState() =>
       _AppointmentDetailsProfileWidgetState();
 }
 

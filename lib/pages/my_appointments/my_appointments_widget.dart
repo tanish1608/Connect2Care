@@ -14,7 +14,7 @@ class MyAppointmentsWidget extends StatefulWidget {
   const MyAppointmentsWidget({super.key});
 
   @override
-  _MyAppointmentsWidgetState createState() => _MyAppointmentsWidgetState();
+  State<MyAppointmentsWidget> createState() => _MyAppointmentsWidgetState();
 }
 
 class _MyAppointmentsWidgetState extends State<MyAppointmentsWidget> {

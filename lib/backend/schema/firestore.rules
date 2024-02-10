@@ -11,14 +11,14 @@ service cloud.firestore {
     match /appointments/{document} {
       allow create: if true;
       allow read: if true;
-      allow write: if false;
+      allow write: if true;
       allow delete: if false;
     }
 
     match /asdfasdf/{document} {
       allow create: if true;
       allow read: if true;
-      allow write: if false;
+      allow write: if true;
       allow delete: if false;
     }
 
@@ -26,35 +26,35 @@ service cloud.firestore {
       allow create: if true;
       allow read: if true;
       allow write: if true;
-      allow delete: if true;
+      allow delete: if false;
     }
 
     match /Doctors/{document} {
       allow create: if true;
       allow read: if true;
       allow write: if true;
-      allow delete: if true;
+      allow delete: if false;
     }
 
     match /blood/{document} {
       allow create: if true;
       allow read: if true;
       allow write: if true;
-      allow delete: if true;
+      allow delete: if false;
     }
 
     match /staff/{document} {
       allow create: if true;
       allow read: if true;
       allow write: if true;
-      allow delete: if true;
+      allow delete: if false;
     }
 
     match /Inventorymangement/{document} {
       allow create: if true;
       allow read: if true;
       allow write: if true;
-      allow delete: if true;
+      allow delete: if false;
     }
   }
 }

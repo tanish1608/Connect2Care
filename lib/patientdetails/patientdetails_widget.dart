@@ -17,7 +17,7 @@ class PatientdetailsWidget extends StatefulWidget {
   final DocumentReference? gh;
 
   @override
-  _PatientdetailsWidgetState createState() => _PatientdetailsWidgetState();
+  State<PatientdetailsWidget> createState() => _PatientdetailsWidgetState();
 }
 
 class _PatientdetailsWidgetState extends State<PatientdetailsWidget> {
@@ -103,6 +103,7 @@ class _PatientdetailsWidgetState extends State<PatientdetailsWidget> {
                           const EdgeInsetsDirectional.fromSTEB(0.0, 37.0, 16.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
@@ -199,7 +200,9 @@ class _PatientdetailsWidgetState extends State<PatientdetailsWidget> {
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 20.0),
                                     child: Row(
-                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisSize: MainAxisSize.min,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
                                         Padding(
                                           padding:
@@ -251,8 +254,8 @@ class _PatientdetailsWidgetState extends State<PatientdetailsWidget> {
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: FFButtonWidget(
-                        onPressed: () {
-                          print('Button pressed ...');
+                        onPressed: () async {
+                          context.pushNamed('addpatient');
                         },
                         text: 'Add Patient',
                         options: FFButtonOptions(

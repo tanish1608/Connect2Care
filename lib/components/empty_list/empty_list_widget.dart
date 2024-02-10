@@ -10,7 +10,7 @@ class EmptyListWidget extends StatefulWidget {
   const EmptyListWidget({super.key});
 
   @override
-  _EmptyListWidgetState createState() => _EmptyListWidgetState();
+  State<EmptyListWidget> createState() => _EmptyListWidgetState();
 }
 
 class _EmptyListWidgetState extends State<EmptyListWidget> {

@@ -13,7 +13,7 @@ class InventoryWidget extends StatefulWidget {
   const InventoryWidget({super.key});
 
   @override
-  _InventoryWidgetState createState() => _InventoryWidgetState();
+  State<InventoryWidget> createState() => _InventoryWidgetState();
 }
 
 class _InventoryWidgetState extends State<InventoryWidget> {

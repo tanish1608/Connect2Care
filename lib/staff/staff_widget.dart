@@ -11,7 +11,7 @@ class StaffWidget extends StatefulWidget {
   const StaffWidget({super.key});
 
   @override
-  _StaffWidgetState createState() => _StaffWidgetState();
+  State<StaffWidget> createState() => _StaffWidgetState();
 }
 
 class _StaffWidgetState extends State<StaffWidget> {

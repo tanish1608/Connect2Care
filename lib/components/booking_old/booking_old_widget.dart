@@ -20,7 +20,7 @@ class BookingOldWidget extends StatefulWidget {
   final DocumentReference? userProfile;
 
   @override
-  _BookingOldWidgetState createState() => _BookingOldWidgetState();
+  State<BookingOldWidget> createState() => _BookingOldWidgetState();
 }
 
 class _BookingOldWidgetState extends State<BookingOldWidget> {

@@ -20,7 +20,7 @@ class EditBookingWidget extends StatefulWidget {
   final AppointmentsRecord? userAppointment;
 
   @override
-  _EditBookingWidgetState createState() => _EditBookingWidgetState();
+  State<EditBookingWidget> createState() => _EditBookingWidgetState();
 }
 
 class _EditBookingWidgetState extends State<EditBookingWidget> {

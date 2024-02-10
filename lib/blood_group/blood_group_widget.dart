@@ -11,7 +11,7 @@ class BloodGroupWidget extends StatefulWidget {
   const BloodGroupWidget({super.key});
 
   @override
-  _BloodGroupWidgetState createState() => _BloodGroupWidgetState();
+  State<BloodGroupWidget> createState() => _BloodGroupWidgetState();
 }
 
 class _BloodGroupWidgetState extends State<BloodGroupWidget> {

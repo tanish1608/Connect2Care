@@ -1795,18 +1795,18 @@ class SendFullPromptCall {
     );
   }
 
-  dynamic createdTimestamp(dynamic response) => getJsonField(
+  int? createdTimestamp(dynamic response) => castToType<int>(getJsonField(
         response,
         r'''$.created''',
-      );
-  dynamic role(dynamic response) => getJsonField(
+      ));
+  String? role(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.choices[:].message.role''',
-      );
-  dynamic content(dynamic response) => getJsonField(
+      ));
+  String? content(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.choices[:].message.content''',
-      );
+      ));
 }
 
 /// End OpenAI ChatGPT Group Code

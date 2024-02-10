@@ -16,7 +16,7 @@ class CompleteProfileWidget extends StatefulWidget {
   const CompleteProfileWidget({super.key});
 
   @override
-  _CompleteProfileWidgetState createState() => _CompleteProfileWidgetState();
+  State<CompleteProfileWidget> createState() => _CompleteProfileWidgetState();
 }
 
 class _CompleteProfileWidgetState extends State<CompleteProfileWidget>

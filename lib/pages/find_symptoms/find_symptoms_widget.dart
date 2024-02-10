@@ -11,7 +11,7 @@ class FindSymptomsWidget extends StatefulWidget {
   const FindSymptomsWidget({super.key});
 
   @override
-  _FindSymptomsWidgetState createState() => _FindSymptomsWidgetState();
+  State<FindSymptomsWidget> createState() => _FindSymptomsWidgetState();
 }
 
 class _FindSymptomsWidgetState extends State<FindSymptomsWidget> {

@@ -23,7 +23,7 @@ class BookAppointmentWidget extends StatefulWidget {
   final DocumentReference? userProfile;
 
   @override
-  _BookAppointmentWidgetState createState() => _BookAppointmentWidgetState();
+  State<BookAppointmentWidget> createState() => _BookAppointmentWidgetState();
 }
 
 class _BookAppointmentWidgetState extends State<BookAppointmentWidget>
@@ -270,479 +270,457 @@ class _BookAppointmentWidgetState extends State<BookAppointmentWidget>
                         );
                       }
                       final columnUsersRecord = snapshot.data!;
-                      return SingleChildScrollView(
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Divider(
-                              thickness: 3.0,
-                              indent: 150.0,
-                              endIndent: 150.0,
-                              color: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
+                      return Column(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Divider(
+                            thickness: 3.0,
+                            indent: 150.0,
+                            endIndent: 150.0,
+                            color:
+                                FlutterFlowTheme.of(context).primaryBackground,
+                          ),
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 8.0, 0.0, 0.0),
+                            child: Text(
+                              'Book Appointment',
+                              style: FlutterFlowTheme.of(context).headlineSmall,
                             ),
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 8.0, 0.0, 0.0),
-                              child: Text(
-                                'Book Appointment',
-                                style:
-                                    FlutterFlowTheme.of(context).headlineSmall,
+                          ),
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Expanded(
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 8.0, 0.0, 0.0),
+                                  child: Text(
+                                    'Fill out the information below in order to book your appointment with our office.',
+                                    style:
+                                        FlutterFlowTheme.of(context).bodySmall,
+                                  ),
+                                ),
                               ),
+                            ],
+                          ),
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 12.0, 0.0, 0.0),
+                            child: Text(
+                              'Emails will be sent to:',
+                              style: FlutterFlowTheme.of(context).bodyMedium,
                             ),
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Expanded(
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 8.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Fill out the information below in order to book your appointment with our office.',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodySmall,
-                                    ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 4.0, 0.0, 12.0),
+                            child: Text(
+                              currentUserEmail,
+                              style: FlutterFlowTheme.of(context)
+                                  .titleMedium
+                                  .override(
+                                    fontFamily: 'Manrope',
+                                    color: FlutterFlowTheme.of(context).primary,
                                   ),
-                                ),
-                              ],
                             ),
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 12.0, 0.0, 0.0),
-                              child: Text(
-                                'Emails will be sent to:',
-                                style: FlutterFlowTheme.of(context).bodyMedium,
+                          ),
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 16.0, 0.0, 0.0),
+                            child: TextFormField(
+                              controller: _model.personsNameController ??=
+                                  TextEditingController(
+                                text: columnUsersRecord.displayName,
                               ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 4.0, 0.0, 12.0),
-                              child: Text(
-                                currentUserEmail,
-                                style: FlutterFlowTheme.of(context)
-                                    .titleMedium
-                                    .override(
-                                      fontFamily: 'Manrope',
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                    ),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 16.0, 0.0, 0.0),
-                              child: TextFormField(
-                                controller: _model.personsNameController ??=
-                                    TextEditingController(
-                                  text: columnUsersRecord.displayName,
+                              focusNode: _model.personsNameFocusNode,
+                              obscureText: false,
+                              decoration: InputDecoration(
+                                labelText: 'Booking For',
+                                labelStyle:
+                                    FlutterFlowTheme.of(context).bodySmall,
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                    width: 2.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
-                                focusNode: _model.personsNameFocusNode,
-                                obscureText: false,
-                                decoration: InputDecoration(
-                                  labelText: 'Booking For',
-                                  labelStyle:
-                                      FlutterFlowTheme.of(context).bodySmall,
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                    color: Color(0x00000000),
+                                    width: 2.0,
                                   ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                      color: Color(0x00000000),
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  errorBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                      color: Color(0x00000000),
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  focusedErrorBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                      color: Color(0x00000000),
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  filled: true,
-                                  fillColor: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
-                                  contentPadding:
-                                      const EdgeInsetsDirectional.fromSTEB(
-                                          20.0, 24.0, 0.0, 24.0),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
-                                style: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .override(
-                                      fontFamily: 'Manrope',
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                validator: _model.personsNameControllerValidator
-                                    .asValidator(context),
-                              ).animateOnPageLoad(animationsMap[
-                                  'textFieldOnPageLoadAnimation1']!),
-                            ),
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 16.0, 0.0, 0.0),
-                              child: FlutterFlowDropDown<String>(
-                                controller: _model.dropDownValueController ??=
-                                    FormFieldController<String>(null),
-                                options: const [
-                                  'Doctors Visit',
-                                  'Routine Checkup',
-                                  'Scan/Update'
-                                ],
-                                onChanged: (val) =>
-                                    setState(() => _model.dropDownValue = val),
-                                width: MediaQuery.sizeOf(context).width * 0.9,
-                                height: 60.0,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .override(
-                                      fontFamily: 'Manrope',
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                    ),
-                                hintText: 'Type of Appointment',
-                                icon: Icon(
-                                  Icons.keyboard_arrow_down_rounded,
-                                  color: FlutterFlowTheme.of(context).grayLight,
-                                  size: 15.0,
+                                errorBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                    color: Color(0x00000000),
+                                    width: 2.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
+                                focusedErrorBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                    color: Color(0x00000000),
+                                    width: 2.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                filled: true,
                                 fillColor: FlutterFlowTheme.of(context)
                                     .primaryBackground,
-                                elevation: 3.0,
-                                borderColor: FlutterFlowTheme.of(context)
-                                    .primaryBackground,
-                                borderWidth: 2.0,
-                                borderRadius: 8.0,
-                                margin: const EdgeInsetsDirectional.fromSTEB(
-                                    20.0, 4.0, 16.0, 4.0),
-                                hidesUnderline: true,
-                                isSearchable: false,
-                                isMultiSelect: false,
-                              ).animateOnPageLoad(animationsMap[
-                                  'dropDownOnPageLoadAnimation']!),
-                            ),
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 16.0, 0.0, 0.0),
-                              child: TextFormField(
-                                controller: _model.problemDescriptionController,
-                                focusNode: _model.problemDescriptionFocusNode,
-                                obscureText: false,
-                                decoration: InputDecoration(
-                                  labelText: 'What\'s the problem?',
-                                  labelStyle:
-                                      FlutterFlowTheme.of(context).bodySmall,
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                      color: Color(0x00000000),
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  errorBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                      color: Color(0x00000000),
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  focusedErrorBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                      color: Color(0x00000000),
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  filled: true,
-                                  fillColor: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
-                                  contentPadding:
-                                      const EdgeInsetsDirectional.fromSTEB(
-                                          20.0, 24.0, 0.0, 24.0),
-                                ),
-                                style: FlutterFlowTheme.of(context).bodyMedium,
-                                textAlign: TextAlign.start,
-                                maxLines: 8,
-                                keyboardType: TextInputType.multiline,
-                                validator: _model
-                                    .problemDescriptionControllerValidator
-                                    .asValidator(context),
-                              ).animateOnPageLoad(animationsMap[
-                                  'textFieldOnPageLoadAnimation2']!),
-                            ),
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 16.0, 0.0, 0.0),
-                              child: InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  await DatePicker.showDateTimePicker(
-                                    context,
-                                    showTitleActions: true,
-                                    onConfirm: (date) {
-                                      safeSetState(() {
-                                        _model.datePicked = date;
-                                      });
-                                    },
-                                    currentTime: getCurrentTimestamp,
-                                    minTime: getCurrentTimestamp,
-                                  );
-                                },
-                                child: Material(
-                                  color: Colors.transparent,
-                                  elevation: 0.0,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  child: Container(
-                                    width:
-                                        MediaQuery.sizeOf(context).width * 0.9,
-                                    height: 60.0,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                      borderRadius: BorderRadius.circular(8.0),
-                                      border: Border.all(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                        width: 2.0,
-                                      ),
-                                    ),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Expanded(
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        20.0, 0.0, 0.0, 0.0),
-                                                child: Text(
-                                                  'Choose Date & Time',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Manrope',
-                                                        fontSize: 12.0,
-                                                      ),
-                                                ),
-                                              ),
-                                              Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                children: [
-                                                  Padding(
-                                                    padding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(20.0, 4.0,
-                                                                0.0, 0.0),
-                                                    child: Text(
-                                                      dateTimeFormat('MMMEd',
-                                                          _model.datePicked),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodySmall
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Manrope',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .tertiary,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w600,
-                                                              ),
-                                                    ),
-                                                  ),
-                                                  Padding(
-                                                    padding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(2.0, 4.0,
-                                                                0.0, 0.0),
-                                                    child: Text(
-                                                      dateTimeFormat('jm',
-                                                          _model.datePicked),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodySmall
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Manrope',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .tertiary,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w600,
-                                                              ),
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 8.0, 0.0),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              FlutterFlowIconButton(
-                                                borderColor: Colors.transparent,
-                                                borderRadius: 30.0,
-                                                buttonSize: 46.0,
-                                                icon: Icon(
-                                                  Icons.date_range_outlined,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .grayLight,
-                                                  size: 20.0,
-                                                ),
-                                                onPressed: () {
-                                                  print(
-                                                      'IconButton pressed ...');
-                                                },
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ).animateOnPageLoad(animationsMap[
-                                  'containerOnPageLoadAnimation']!),
-                            ),
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 24.0, 0.0, 20.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  FFButtonWidget(
-                                    onPressed: () async {
-                                      context.pop();
-                                    },
-                                    text: 'Cancel',
-                                    options: FFButtonOptions(
-                                      width: 100.0,
-                                      height: 50.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 0.0),
-                                      iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily: 'Manrope',
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                            fontWeight: FontWeight.w500,
-                                          ),
-                                      elevation: 0.0,
-                                      borderSide: const BorderSide(
-                                        color: Colors.transparent,
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(40.0),
-                                    ),
-                                  ).animateOnPageLoad(animationsMap[
-                                      'buttonOnPageLoadAnimation1']!),
-                                  FFButtonWidget(
-                                    onPressed: () async {
-                                      await AppointmentsRecord.collection
-                                          .doc()
-                                          .set(createAppointmentsRecordData(
-                                            appointmentType:
-                                                _model.dropDownValue,
-                                            appointmentTime: _model.datePicked,
-                                            appointmentName: _model
-                                                .personsNameController.text,
-                                            appointmentDescription: _model
-                                                .problemDescriptionController
-                                                .text,
-                                            appointmentEmail: currentUserEmail,
-                                            appointmentPerson:
-                                                currentUserReference,
-                                          ));
-                                      context.pop();
-                                    },
-                                    text: 'Book Now',
-                                    options: FFButtonOptions(
-                                      width: 170.0,
-                                      height: 50.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 0.0),
-                                      iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily: 'Manrope',
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.w500,
-                                          ),
-                                      elevation: 3.0,
-                                      borderSide: const BorderSide(
-                                        color: Colors.transparent,
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(40.0),
-                                    ),
-                                  ).animateOnPageLoad(animationsMap[
-                                      'buttonOnPageLoadAnimation2']!),
-                                ],
+                                contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    20.0, 24.0, 0.0, 24.0),
                               ),
+                              style: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
+                                    fontFamily: 'Manrope',
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                              validator: _model.personsNameControllerValidator
+                                  .asValidator(context),
+                            ).animateOnPageLoad(animationsMap[
+                                'textFieldOnPageLoadAnimation1']!),
+                          ),
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 16.0, 0.0, 0.0),
+                            child: FlutterFlowDropDown<String>(
+                              controller: _model.dropDownValueController ??=
+                                  FormFieldController<String>(null),
+                              options: const [
+                                'Doctors Visit',
+                                'Routine Checkup',
+                                'Scan/Update'
+                              ],
+                              onChanged: (val) =>
+                                  setState(() => _model.dropDownValue = val),
+                              width: MediaQuery.sizeOf(context).width * 0.9,
+                              height: 60.0,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
+                                    fontFamily: 'Manrope',
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                  ),
+                              hintText: 'Type of Appointment',
+                              icon: Icon(
+                                Icons.keyboard_arrow_down_rounded,
+                                color: FlutterFlowTheme.of(context).grayLight,
+                                size: 15.0,
+                              ),
+                              fillColor: FlutterFlowTheme.of(context)
+                                  .primaryBackground,
+                              elevation: 3.0,
+                              borderColor: FlutterFlowTheme.of(context)
+                                  .primaryBackground,
+                              borderWidth: 2.0,
+                              borderRadius: 8.0,
+                              margin: const EdgeInsetsDirectional.fromSTEB(
+                                  20.0, 4.0, 16.0, 4.0),
+                              hidesUnderline: true,
+                              isSearchable: false,
+                              isMultiSelect: false,
+                            ).animateOnPageLoad(
+                                animationsMap['dropDownOnPageLoadAnimation']!),
+                          ),
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 16.0, 0.0, 0.0),
+                            child: TextFormField(
+                              controller: _model.problemDescriptionController,
+                              focusNode: _model.problemDescriptionFocusNode,
+                              obscureText: false,
+                              decoration: InputDecoration(
+                                labelText: 'What\'s the problem?',
+                                labelStyle:
+                                    FlutterFlowTheme.of(context).bodySmall,
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                    width: 2.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                    color: Color(0x00000000),
+                                    width: 2.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                errorBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                    color: Color(0x00000000),
+                                    width: 2.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                focusedErrorBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                    color: Color(0x00000000),
+                                    width: 2.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                filled: true,
+                                fillColor: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
+                                contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    20.0, 24.0, 0.0, 24.0),
+                              ),
+                              style: FlutterFlowTheme.of(context).bodyMedium,
+                              textAlign: TextAlign.start,
+                              maxLines: 8,
+                              keyboardType: TextInputType.multiline,
+                              validator: _model
+                                  .problemDescriptionControllerValidator
+                                  .asValidator(context),
+                            ).animateOnPageLoad(animationsMap[
+                                'textFieldOnPageLoadAnimation2']!),
+                          ),
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 16.0, 0.0, 0.0),
+                            child: InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                await DatePicker.showDateTimePicker(
+                                  context,
+                                  showTitleActions: true,
+                                  onConfirm: (date) {
+                                    safeSetState(() {
+                                      _model.datePicked = date;
+                                    });
+                                  },
+                                  currentTime: getCurrentTimestamp,
+                                  minTime: getCurrentTimestamp,
+                                );
+                              },
+                              child: Material(
+                                color: Colors.transparent,
+                                elevation: 0.0,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                child: Container(
+                                  width: MediaQuery.sizeOf(context).width * 0.9,
+                                  height: 60.0,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                    borderRadius: BorderRadius.circular(8.0),
+                                    border: Border.all(
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryBackground,
+                                      width: 2.0,
+                                    ),
+                                  ),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Expanded(
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Padding(
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      20.0, 0.0, 0.0, 0.0),
+                                              child: Text(
+                                                'Choose Date & Time',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Manrope',
+                                                          fontSize: 12.0,
+                                                        ),
+                                              ),
+                                            ),
+                                            Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          20.0, 4.0, 0.0, 0.0),
+                                                  child: Text(
+                                                    dateTimeFormat('MMMEd',
+                                                        _model.datePicked),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodySmall
+                                                        .override(
+                                                          fontFamily: 'Manrope',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .tertiary,
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                        ),
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          2.0, 4.0, 0.0, 0.0),
+                                                  child: Text(
+                                                    dateTimeFormat('jm',
+                                                        _model.datePicked),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodySmall
+                                                        .override(
+                                                          fontFamily: 'Manrope',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .tertiary,
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                        ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 8.0, 0.0),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            FlutterFlowIconButton(
+                                              borderColor: Colors.transparent,
+                                              borderRadius: 30.0,
+                                              buttonSize: 46.0,
+                                              icon: Icon(
+                                                Icons.date_range_outlined,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .grayLight,
+                                                size: 20.0,
+                                              ),
+                                              onPressed: () {
+                                                print('IconButton pressed ...');
+                                              },
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ).animateOnPageLoad(
+                                animationsMap['containerOnPageLoadAnimation']!),
+                          ),
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 24.0, 0.0, 20.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                FFButtonWidget(
+                                  onPressed: () async {
+                                    context.pop();
+                                  },
+                                  text: 'Cancel',
+                                  options: FFButtonOptions(
+                                    width: 100.0,
+                                    height: 50.0,
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily: 'Manrope',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                    elevation: 0.0,
+                                    borderSide: const BorderSide(
+                                      color: Colors.transparent,
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(40.0),
+                                  ),
+                                ).animateOnPageLoad(animationsMap[
+                                    'buttonOnPageLoadAnimation1']!),
+                                FFButtonWidget(
+                                  onPressed: () async {
+                                    await AppointmentsRecord.collection
+                                        .doc()
+                                        .set(createAppointmentsRecordData(
+                                          appointmentType: _model.dropDownValue,
+                                          appointmentTime: _model.datePicked,
+                                          appointmentName:
+                                              _model.personsNameController.text,
+                                          appointmentDescription: _model
+                                              .problemDescriptionController
+                                              .text,
+                                          appointmentEmail: currentUserEmail,
+                                          appointmentPerson:
+                                              currentUserReference,
+                                        ));
+                                    context.pop();
+                                  },
+                                  text: 'Book Now',
+                                  options: FFButtonOptions(
+                                    width: 170.0,
+                                    height: 50.0,
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily: 'Manrope',
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                    elevation: 3.0,
+                                    borderSide: const BorderSide(
+                                      color: Colors.transparent,
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(40.0),
+                                  ),
+                                ).animateOnPageLoad(animationsMap[
+                                    'buttonOnPageLoadAnimation2']!),
+                              ],
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       );
                     },
                   ),

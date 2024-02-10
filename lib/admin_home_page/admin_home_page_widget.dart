@@ -13,7 +13,7 @@ class AdminHomePageWidget extends StatefulWidget {
   const AdminHomePageWidget({super.key});
 
   @override
-  _AdminHomePageWidgetState createState() => _AdminHomePageWidgetState();
+  State<AdminHomePageWidget> createState() => _AdminHomePageWidgetState();
 }
 
 class _AdminHomePageWidgetState extends State<AdminHomePageWidget> {
@@ -337,7 +337,7 @@ class _AdminHomePageWidgetState extends State<AdminHomePageWidget> {
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
                               child: Column(
-                                mainAxisSize: MainAxisSize.max,
+                                mainAxisSize: MainAxisSize.min,
                                 children: [
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
@@ -387,235 +387,239 @@ class _AdminHomePageWidgetState extends State<AdminHomePageWidget> {
                                             ),
                                           );
                                         }
-                                        return Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: List.generate(
-                                              nextAppointmentSectionAppointmentsRecordList
-                                                  .length,
-                                              (nextAppointmentSectionIndex) {
-                                            final nextAppointmentSectionAppointmentsRecord =
-                                                nextAppointmentSectionAppointmentsRecordList[
-                                                    nextAppointmentSectionIndex];
-                                            return Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 0.0, 0.0, 12.0),
-                                              child: StreamBuilder<
-                                                  AppointmentsRecord>(
-                                                stream: AppointmentsRecord
-                                                    .getDocument(
-                                                        nextAppointmentSectionAppointmentsRecord
-                                                            .reference),
-                                                builder: (context, snapshot) {
-                                                  // Customize what your widget looks like when it's loading.
-                                                  if (!snapshot.hasData) {
-                                                    return Center(
-                                                      child: SizedBox(
-                                                        width: 50.0,
-                                                        height: 50.0,
-                                                        child:
-                                                            CircularProgressIndicator(
-                                                          valueColor:
-                                                              AlwaysStoppedAnimation<
-                                                                  Color>(
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
+                                        return SingleChildScrollView(
+                                          scrollDirection: Axis.horizontal,
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: List.generate(
+                                                nextAppointmentSectionAppointmentsRecordList
+                                                    .length,
+                                                (nextAppointmentSectionIndex) {
+                                              final nextAppointmentSectionAppointmentsRecord =
+                                                  nextAppointmentSectionAppointmentsRecordList[
+                                                      nextAppointmentSectionIndex];
+                                              return Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 0.0, 12.0),
+                                                child: StreamBuilder<
+                                                    AppointmentsRecord>(
+                                                  stream: AppointmentsRecord
+                                                      .getDocument(
+                                                          nextAppointmentSectionAppointmentsRecord
+                                                              .reference),
+                                                  builder: (context, snapshot) {
+                                                    // Customize what your widget looks like when it's loading.
+                                                    if (!snapshot.hasData) {
+                                                      return Center(
+                                                        child: SizedBox(
+                                                          width: 50.0,
+                                                          height: 50.0,
+                                                          child:
+                                                              CircularProgressIndicator(
+                                                            valueColor:
+                                                                AlwaysStoppedAnimation<
+                                                                    Color>(
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .primary,
+                                                            ),
                                                           ),
                                                         ),
-                                                      ),
-                                                    );
-                                                  }
-                                                  final appointmentCardAppointmentsRecord =
-                                                      snapshot.data!;
-                                                  return InkWell(
-                                                    splashColor:
-                                                        Colors.transparent,
-                                                    focusColor:
-                                                        Colors.transparent,
-                                                    hoverColor:
-                                                        Colors.transparent,
-                                                    highlightColor:
-                                                        Colors.transparent,
-                                                    onTap: () async {
-                                                      context.pushNamed(
-                                                        'appointmentDetails',
-                                                        queryParameters: {
-                                                          'appointmentDetails':
-                                                              serializeParam(
-                                                            appointmentCardAppointmentsRecord
-                                                                .reference,
-                                                            ParamType
-                                                                .DocumentReference,
-                                                          ),
-                                                        }.withoutNulls,
                                                       );
-                                                    },
-                                                    child: Container(
-                                                      width: MediaQuery.sizeOf(
-                                                                  context)
-                                                              .width *
-                                                          0.781,
-                                                      decoration: BoxDecoration(
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
-                                                        boxShadow: const [
-                                                          BoxShadow(
-                                                            blurRadius: 4.0,
-                                                            color: Color(
-                                                                0x230E151B),
-                                                            offset: Offset(
-                                                                0.0, 2.0),
-                                                          )
-                                                        ],
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(8.0),
-                                                      ),
-                                                      child: Padding(
-                                                        padding: const EdgeInsets.all(
-                                                            12.0),
-                                                        child: Column(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          children: [
-                                                            Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .spaceBetween,
-                                                              children: [
-                                                                Expanded(
-                                                                  child:
-                                                                      Padding(
-                                                                    padding: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            4.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child: Text(
-                                                                      nextAppointmentSectionAppointmentsRecord
-                                                                          .appointmentName,
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .headlineSmall,
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ],
+                                                    }
+                                                    final appointmentCardAppointmentsRecord =
+                                                        snapshot.data!;
+                                                    return InkWell(
+                                                      splashColor:
+                                                          Colors.transparent,
+                                                      focusColor:
+                                                          Colors.transparent,
+                                                      hoverColor:
+                                                          Colors.transparent,
+                                                      highlightColor:
+                                                          Colors.transparent,
+                                                      onTap: () async {
+                                                        context.pushNamed(
+                                                          'appointmentDetails',
+                                                          queryParameters: {
+                                                            'appointmentDetails':
+                                                                serializeParam(
+                                                              appointmentCardAppointmentsRecord
+                                                                  .reference,
+                                                              ParamType
+                                                                  .DocumentReference,
                                                             ),
-                                                            Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .spaceBetween,
-                                                              children: [
-                                                                Expanded(
-                                                                  child:
-                                                                      Padding(
-                                                                    padding: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            4.0,
-                                                                            4.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        AutoSizeText(
-                                                                      nextAppointmentSectionAppointmentsRecord
-                                                                          .appointmentType,
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium,
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                            Padding(
-                                                              padding:
-                                                                  const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          8.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                              child: Row(
+                                                          }.withoutNulls,
+                                                        );
+                                                      },
+                                                      child: Container(
+                                                        width:
+                                                            MediaQuery.sizeOf(
+                                                                        context)
+                                                                    .width *
+                                                                0.781,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          boxShadow: const [
+                                                            BoxShadow(
+                                                              blurRadius: 4.0,
+                                                              color: Color(
+                                                                  0x230E151B),
+                                                              offset: Offset(
+                                                                  0.0, 2.0),
+                                                            )
+                                                          ],
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      8.0),
+                                                        ),
+                                                        child: Padding(
+                                                          padding:
+                                                              const EdgeInsets.all(
+                                                                  12.0),
+                                                          child: Column(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            children: [
+                                                              Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
                                                                         .max,
                                                                 mainAxisAlignment:
                                                                     MainAxisAlignment
-                                                                        .center,
+                                                                        .spaceBetween,
                                                                 children: [
-                                                                  Padding(
-                                                                    padding: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            160.0,
-                                                                            0.0),
-                                                                    child: Card(
-                                                                      clipBehavior:
-                                                                          Clip.antiAliasWithSaveLayer,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryBackground,
-                                                                      shape:
-                                                                          RoundedRectangleBorder(
-                                                                        borderRadius:
-                                                                            BorderRadius.circular(20.0),
-                                                                      ),
+                                                                  Expanded(
+                                                                    child:
+                                                                        Padding(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          4.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                       child:
-                                                                          Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                            8.0,
-                                                                            4.0,
-                                                                            8.0,
-                                                                            4.0),
-                                                                        child:
-                                                                            Row(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          children: [
-                                                                            Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(8.0, 4.0, 2.0, 4.0),
-                                                                              child: Text(
-                                                                                dateTimeFormat('MMMEd', nextAppointmentSectionAppointmentsRecord.appointmentTime!),
-                                                                                style: FlutterFlowTheme.of(context).bodyMedium,
-                                                                              ),
-                                                                            ),
-                                                                            Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(2.0, 4.0, 8.0, 4.0),
-                                                                              child: Text(
-                                                                                dateTimeFormat('jm', nextAppointmentSectionAppointmentsRecord.appointmentTime!),
-                                                                                style: FlutterFlowTheme.of(context).bodySmall,
-                                                                              ),
-                                                                            ),
-                                                                          ],
-                                                                        ),
+                                                                          Text(
+                                                                        nextAppointmentSectionAppointmentsRecord
+                                                                            .appointmentName,
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .headlineSmall,
                                                                       ),
                                                                     ),
                                                                   ),
                                                                 ],
                                                               ),
-                                                            ),
-                                                          ],
+                                                              Row(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                mainAxisAlignment:
+                                                                    MainAxisAlignment
+                                                                        .spaceBetween,
+                                                                children: [
+                                                                  Expanded(
+                                                                    child:
+                                                                        Padding(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          4.0,
+                                                                          4.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                      child:
+                                                                          AutoSizeText(
+                                                                        nextAppointmentSectionAppointmentsRecord
+                                                                            .appointmentType,
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium,
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            8.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .center,
+                                                                  children: [
+                                                                    Padding(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          160.0,
+                                                                          0.0),
+                                                                      child:
+                                                                          Card(
+                                                                        clipBehavior:
+                                                                            Clip.antiAliasWithSaveLayer,
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primaryBackground,
+                                                                        shape:
+                                                                            RoundedRectangleBorder(
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(20.0),
+                                                                        ),
+                                                                        child:
+                                                                            Padding(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                              8.0,
+                                                                              4.0,
+                                                                              8.0,
+                                                                              4.0),
+                                                                          child:
+                                                                              Row(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            children: [
+                                                                              Padding(
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(8.0, 4.0, 2.0, 4.0),
+                                                                                child: Text(
+                                                                                  dateTimeFormat('MMMEd', nextAppointmentSectionAppointmentsRecord.appointmentTime!),
+                                                                                  style: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                ),
+                                                                              ),
+                                                                              Padding(
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(2.0, 4.0, 8.0, 4.0),
+                                                                                child: Text(
+                                                                                  dateTimeFormat('jm', nextAppointmentSectionAppointmentsRecord.appointmentTime!),
+                                                                                  style: FlutterFlowTheme.of(context).bodySmall,
+                                                                                ),
+                                                                              ),
+                                                                            ],
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
                                                         ),
                                                       ),
-                                                    ),
-                                                  );
-                                                },
-                                              ),
-                                            );
-                                          }),
+                                                    );
+                                                  },
+                                                ),
+                                              );
+                                            }),
+                                          ),
                                         );
                                       },
                                     ),

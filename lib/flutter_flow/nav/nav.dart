@@ -203,6 +203,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Chatbott',
           path: '/chatbott',
           builder: (context, params) => const ChatbottWidget(),
+        ),
+        FFRoute(
+          name: 'addpatient',
+          path: '/addpatient',
+          builder: (context, params) => const AddpatientWidget(),
+        ),
+        FFRoute(
+          name: 'addinve',
+          path: '/addinve',
+          builder: (context, params) => const AddinveWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

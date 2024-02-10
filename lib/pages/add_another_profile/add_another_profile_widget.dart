@@ -12,7 +12,7 @@ class AddAnotherProfileWidget extends StatefulWidget {
   const AddAnotherProfileWidget({super.key});
 
   @override
-  _AddAnotherProfileWidgetState createState() =>
+  State<AddAnotherProfileWidget> createState() =>
       _AddAnotherProfileWidgetState();
 }
 

@@ -11,7 +11,7 @@ class ChatbottWidget extends StatefulWidget {
   const ChatbottWidget({super.key});
 
   @override
-  _ChatbottWidgetState createState() => _ChatbottWidgetState();
+  State<ChatbottWidget> createState() => _ChatbottWidgetState();
 }
 
 class _ChatbottWidgetState extends State<ChatbottWidget> {
@@ -74,28 +74,28 @@ class _ChatbottWidgetState extends State<ChatbottWidget> {
                           color: FlutterFlowTheme.of(context).primaryText,
                           width: 2.0,
                         ),
-                        borderRadius: BorderRadius.circular(0.0),
+                        borderRadius: BorderRadius.circular(8.0),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderSide: const BorderSide(
                           color: Color(0x00000000),
                           width: 2.0,
                         ),
-                        borderRadius: BorderRadius.circular(0.0),
+                        borderRadius: BorderRadius.circular(8.0),
                       ),
                       errorBorder: OutlineInputBorder(
                         borderSide: const BorderSide(
                           color: Color(0x00000000),
                           width: 2.0,
                         ),
-                        borderRadius: BorderRadius.circular(0.0),
+                        borderRadius: BorderRadius.circular(8.0),
                       ),
                       focusedErrorBorder: OutlineInputBorder(
                         borderSide: const BorderSide(
                           color: Color(0x00000000),
                           width: 2.0,
                         ),
-                        borderRadius: BorderRadius.circular(0.0),
+                        borderRadius: BorderRadius.circular(8.0),
                       ),
                       contentPadding: const EdgeInsetsDirectional.fromSTEB(
                           20.0, 32.0, 20.0, 12.0),
@@ -116,7 +116,7 @@ class _ChatbottWidgetState extends State<ChatbottWidget> {
                     onPressed: () async {
                       if (_model.textController.text != '') {
                         _model.chatbotResult = await actions.chatGPT(
-                          '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',
+                          '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',
                           'think you are a chatbot, who works for Connect2Care campany, which does hospital management system, you are used to chat with the patient and help them with their queries${_model.textController.text}',
                         );
                         if (_model.chatbotResult != null &&
@@ -149,32 +149,13 @@ class _ChatbottWidgetState extends State<ChatbottWidget> {
                   ),
                 ),
                 Container(
-                  width: 351.0,
-                  height: 267.0,
+                  width: 350.0,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                   ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
-                        child: SingleChildScrollView(
-                          scrollDirection: Axis.horizontal,
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                _model.prompt,
-                                style: FlutterFlowTheme.of(context).bodyMedium,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
+                  child: Text(
+                    _model.prompt,
+                    style: FlutterFlowTheme.of(context).labelSmall,
                   ),
                 ),
               ],

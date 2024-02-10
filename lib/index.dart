@@ -24,3 +24,5 @@ export '/staff/staff_widget.dart' show StaffWidget;
 export '/inventory/inventory_widget.dart' show InventoryWidget;
 export '/blood_group/blood_group_widget.dart' show BloodGroupWidget;
 export '/chatbott/chatbott_widget.dart' show ChatbottWidget;
+export '/addpatient/addpatient_widget.dart' show AddpatientWidget;
+export '/addinve/addinve_widget.dart' show AddinveWidget;

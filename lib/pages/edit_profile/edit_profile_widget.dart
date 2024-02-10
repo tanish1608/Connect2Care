@@ -21,7 +21,7 @@ class EditProfileWidget extends StatefulWidget {
   final DocumentReference? userProfile;
 
   @override
-  _EditProfileWidgetState createState() => _EditProfileWidgetState();
+  State<EditProfileWidget> createState() => _EditProfileWidgetState();
 }
 
 class _EditProfileWidgetState extends State<EditProfileWidget> {

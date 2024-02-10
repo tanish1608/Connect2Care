@@ -7,7 +7,7 @@ class MainLogoWidget extends StatefulWidget {
   const MainLogoWidget({super.key});
 
   @override
-  _MainLogoWidgetState createState() => _MainLogoWidgetState();
+  State<MainLogoWidget> createState() => _MainLogoWidgetState();
 }
 
 class _MainLogoWidgetState extends State<MainLogoWidget> {
@@ -47,9 +47,9 @@ class _MainLogoWidgetState extends State<MainLogoWidget> {
           Padding(
             padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
             child: Image.asset(
-              'assets/images/health-ai_logoHorz.png',
-              width: 120.0,
-              height: 40.0,
+              'assets/images/c2c1.png',
+              width: 113.0,
+              height: 36.0,
               fit: BoxFit.fitWidth,
             ),
           ),

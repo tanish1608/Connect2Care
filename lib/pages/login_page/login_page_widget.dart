@@ -1,9 +1,7 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'login_page_model.dart';
@@ -13,7 +11,7 @@ class LoginPageWidget extends StatefulWidget {
   const LoginPageWidget({super.key});
 
   @override
-  _LoginPageWidgetState createState() => _LoginPageWidgetState();
+  State<LoginPageWidget> createState() => _LoginPageWidgetState();
 }
 
 class _LoginPageWidgetState extends State<LoginPageWidget>
@@ -111,9 +109,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                 if (Theme.of(context).brightness ==
                                     Brightness.dark)
                                   Image.asset(
-                                    'assets/images/health-ai_logoVert.png',
-                                    width: 200.0,
-                                    height: 130.0,
+                                    'assets/images/IMG-20231217-WA0004-removebg.png',
+                                    width: 234.0,
+                                    height: 151.0,
                                     fit: BoxFit.fitHeight,
                                   ),
                                 if (!(Theme.of(context).brightness ==
@@ -156,6 +154,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                       ),
                                     ],
                                     controller: _model.tabBarController,
+                                    onTap: (i) async {
+                                      [() async {}, () async {}][i]();
+                                    },
                                   ),
                                 ),
                                 Expanded(
@@ -369,55 +370,6 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                               Padding(
                                                 padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
-                                                        0.0, 10.0, 0.0, 0.0),
-                                                child:
-                                                    FlutterFlowDropDown<String>(
-                                                  controller: _model
-                                                          .dropDownValueController ??=
-                                                      FormFieldController<
-                                                          String>(null),
-                                                  options: const ['User', 'Admin'],
-                                                  onChanged: (val) => setState(
-                                                      () => _model
-                                                          .dropDownValue = val),
-                                                  width: 323.0,
-                                                  height: 50.0,
-                                                  textStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium,
-                                                  hintText: 'Please select...',
-                                                  icon: Icon(
-                                                    Icons
-                                                        .keyboard_arrow_down_rounded,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .secondaryText,
-                                                    size: 24.0,
-                                                  ),
-                                                  fillColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .info,
-                                                  elevation: 2.0,
-                                                  borderColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .alternate,
-                                                  borderWidth: 2.0,
-                                                  borderRadius: 0.0,
-                                                  margin: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
-                                                  hidesUnderline: true,
-                                                  isOverButton: true,
-                                                  isSearchable: false,
-                                                  isMultiSelect: false,
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
                                                         0.0, 24.0, 0.0, 0.0),
                                                 child: FFButtonWidget(
                                                   onPressed: () async {
@@ -528,24 +480,16 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                                         0.0, 20.0, 0.0, 24.0),
                                                 child: FFButtonWidget(
                                                   onPressed: () async {
-                                                    GoRouter.of(context)
-                                                        .prepareAuthEvent();
-                                                    final user =
-                                                        await authManager
-                                                            .signInAnonymously(
-                                                                context);
-                                                    if (user == null) {
-                                                      return;
-                                                    }
+                                                    context.pushNamed(
+                                                        'AdminHomePage');
 
-                                                    context.pushNamedAuth(
-                                                        'homePage',
-                                                        context.mounted);
+                                                    context.pushNamed(
+                                                        'AdminHomePage');
                                                   },
-                                                  text: 'Continue as Guest',
+                                                  text: 'Admin ',
                                                   options: FFButtonOptions(
-                                                    width: 230.0,
-                                                    height: 50.0,
+                                                    width: 185.0,
+                                                    height: 40.0,
                                                     padding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
@@ -573,7 +517,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            40.0),
+                                                            8.0),
                                                   ),
                                                 ),
                                               ),

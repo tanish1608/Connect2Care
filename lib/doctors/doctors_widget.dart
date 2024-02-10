@@ -10,7 +10,7 @@ class DoctorsWidget extends StatefulWidget {
   const DoctorsWidget({super.key});
 
   @override
-  _DoctorsWidgetState createState() => _DoctorsWidgetState();
+  State<DoctorsWidget> createState() => _DoctorsWidgetState();
 }
 
 class _DoctorsWidgetState extends State<DoctorsWidget> {

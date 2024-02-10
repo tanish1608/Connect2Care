@@ -22,7 +22,7 @@ class ProfilePageWidget extends StatefulWidget {
   final DocumentReference? userProfile;
 
   @override
-  _ProfilePageWidgetState createState() => _ProfilePageWidgetState();
+  State<ProfilePageWidget> createState() => _ProfilePageWidgetState();
 }
 
 class _ProfilePageWidgetState extends State<ProfilePageWidget>
@@ -719,6 +719,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                           }
                           return ListView.builder(
                             padding: EdgeInsets.zero,
+                            primary: false,
                             shrinkWrap: true,
                             scrollDirection: Axis.vertical,
                             itemCount: listViewAppointmentsRecordList.length,
